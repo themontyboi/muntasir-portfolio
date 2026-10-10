@@ -7,8 +7,8 @@ import { Experience } from "@/components/sections/Experience";
 import { Hero } from "@/components/sections/Hero";
 import { Projects } from "@/components/sections/Projects";
 import { Skills } from "@/components/sections/Skills";
-import { ResumeModal } from "@/components/resume/ResumeModal";
 import { siteConfig } from "@/data/portfolio";
+import { getPortfolioProjects } from "@/lib/project-gallery";
 
 export default function Home() {
   const personJsonLd = {
@@ -39,6 +39,8 @@ export default function Home() {
       "Security operations",
       "Secure application development",
       "Unity game development",
+      "Local AI systems",
+      "Interactive web applications",
     ],
   };
 
@@ -54,13 +56,12 @@ export default function Home() {
         <About />
         <CareerFocus />
         <Skills />
-        <Projects />
+        <Projects projects={getPortfolioProjects()} />
         <Education />
         <Certificates />
         <Experience />
         <Contact />
       </main>
-      <ResumeModal />
     </>
   );
 }

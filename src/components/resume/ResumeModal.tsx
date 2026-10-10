@@ -2,28 +2,8 @@
 
 import { GitBranch, Link2, Mail, X } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
-import { certificates, experience, siteConfig } from "@/data/portfolio";
+import { academicHighlights, certificates, coursework, experience, resumeProjects, siteConfig, skills } from "@/data/portfolio";
 import { RESUME_MODAL_EVENT } from "@/lib/resume-modal";
-
-const coursework = [
-  "Ethical Hacking",
-  "Computer Forensics",
-  "Network Security",
-  "Secure Applications and DevSecOps",
-  "Cloud Systems Security",
-  "Cryptology",
-  "Cybersecurity Policy and Law",
-  "Cybersecurity Management",
-];
-
-const academicHighlights = [
-  "Ethical Hacking - High Distinction",
-  "Cybersecurity Policy and Law - High Distinction",
-  "Cybersecurity Management - High Distinction",
-  "Secure Database Design - Distinction",
-  "Secure Applications and DevSecOps - Distinction",
-  "Computer Forensics - Distinction",
-];
 
 const skillGroups = {
   Cybersecurity: [
@@ -48,42 +28,14 @@ const skillGroups = {
     "CSS",
     "JavaScript",
     "React",
+    "Next.js",
+    "TypeScript",
     "Firebase",
     "Unity",
   ],
   Infrastructure: ["Linux", "Windows", "Kubernetes", "Prometheus", "Grafana", "Git", "Visual Studio Code"],
+  "AI Systems & Application Engineering": skills["AI Systems & Application Engineering"],
 };
-
-const projects = [
-  {
-    title: "Live Sticky Wall",
-    label: "Real-time collaborative web application.",
-    description:
-      "Built a QR-based audience feedback platform supporting typed and hand-drawn notes, Firebase real-time synchronisation, category-based feedback and an administrative dashboard.",
-    tech: "React • Firebase • Tailwind CSS • Framer Motion",
-  },
-  {
-    title: "Abyss Bond",
-    label: "Unity gameplay prototype.",
-    description:
-      "Developed a playable third-person prototype exploring player movement, camera systems, combat interactions, companion behaviour and Web deployment.",
-    tech: "Unity 6 • C# • URP • New Input System",
-  },
-  {
-    title: "Web Application Vulnerability Assessment Lab",
-    label: "Academic Red/Blue Team project.",
-    description:
-      "Performed authorised testing in an isolated Kali / Metasploitable / DVWA environment, including service enumeration, controlled SQL injection validation, hardening and retesting.",
-    tech: "Kali Linux • Nmap • DVWA",
-  },
-  {
-    title: "Digital Forensics Investigation",
-    label: "Academic investigation project.",
-    description:
-      "Analysed a supplied forensic disk image using Autopsy, validated evidence integrity and examined system/user artefacts.",
-    tech: "Autopsy • FTK Imager",
-  },
-];
 
 const unityCertificate = certificates.find(
   (certificate) => certificate.title === "Complete C# Unity Game Developer 3D",
@@ -190,7 +142,7 @@ export function ResumeModal() {
             <h2 id={titleId} className="display-heading">
               {siteConfig.name}
             </h2>
-            <p>Cybersecurity Student | IT Support | Security Operations</p>
+            <p>Cybersecurity Student | IT Support | AI and Software</p>
             <p>{siteConfig.location}</p>
           </div>
           <button
@@ -223,12 +175,11 @@ export function ResumeModal() {
           <section className="resume-modal-section">
             <h3>Profile</h3>
             <p>
-              I am a Bachelor of Cybersecurity student in Melbourne with practical academic and
-              personal project experience across ethical hacking, digital forensics, secure
-              application development, networking, cloud security and software development. My
-              personal projects include real-time web applications and Unity gameplay prototypes. I
-              am seeking entry-level IT support, service desk, cybersecurity and security operations
-              opportunities.
+              Cybersecurity undergraduate in Melbourne building local AI systems and software
+              engineering projects alongside academic security labs. Practical work includes a
+              multimodal AI tutoring Alpha, interactive web applications, digital forensics and
+              Unity prototypes. Interested in technical support, applied software development
+              and security operations opportunities.
             </p>
           </section>
 
@@ -271,14 +222,25 @@ export function ResumeModal() {
           </section>
 
           <section className="resume-modal-section">
-            <h3>Projects</h3>
+            <h3>Selected Projects</h3>
             <div className="resume-modal-projects">
-              {projects.map((project) => (
+              {resumeProjects.map((project) => (
                 <article key={project.title}>
                   <h4>{project.title}</h4>
-                  <p className="resume-tech">{project.label}</p>
-                  <p>{project.description}</p>
+                  <p className="resume-tech">{project.subtitle}</p>
+                  {project.bullets?.length ? (
+                    <ul className="resume-project-bullets">
+                      {project.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+                    </ul>
+                  ) : <p>{project.description}</p>}
                   <p className="resume-tech">{project.tech}</p>
+                  {project.status ? <p>{project.status}</p> : null}
+                  {project.href ? (
+                    <a className="resume-project-link" href={project.href} target="_blank" rel="noopener noreferrer">
+                      <GitBranch size={15} aria-hidden="true" />
+                      {project.hrefLabel}
+                    </a>
+                  ) : null}
                 </article>
               ))}
             </div>

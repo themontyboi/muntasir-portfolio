@@ -8,7 +8,7 @@ export function Skills() {
       <SectionHeading
         eyebrow="Technical skills"
         title="Technical Skills"
-        description="Focused foundations from cybersecurity study, academic labs, development practice and tool exposure."
+        description="Practical foundations from cybersecurity labs, software projects and local AI experimentation."
       />
       <div className="mx-auto grid max-w-6xl gap-5 lg:grid-cols-3">
         {Object.entries(skills).map(([category, items]) => (

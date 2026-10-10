@@ -7,8 +7,8 @@ export function Experience() {
     <section id="experience" className="section-shell">
       <SectionHeading
         eyebrow="Experience"
-        title="Transferable professional habits"
-        description="Work experience framed honestly around reliability, communication, procedures and user support."
+        title="Professional Experience"
+        description="Experience in facilities support, communication and helping people use technology."
       />
       <div className="mx-auto grid max-w-6xl gap-5 lg:grid-cols-2">
         {experience.map((item) => (

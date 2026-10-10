@@ -23,6 +23,7 @@ export type Project = {
   githubUrl: string | null;
   liveUrl: string | null;
   featured: boolean;
+  flagship?: boolean;
   comingSoon: boolean;
   evidenceLabel?: string;
   evidenceImages?: ProjectEvidenceImage[];
@@ -36,6 +37,9 @@ export type Project = {
   cardTechnologySummary?: string;
   cardStatusLabel?: string;
   implementationHighlights?: string[];
+  engineeringFocus?: string;
+  developmentNote?: string;
+  detailsUrl?: string;
   playable?: {
     url: string;
     desktopNote: string;
@@ -44,6 +48,7 @@ export type Project = {
 
 export type ProjectEvidenceImage = {
   src: string;
+  title?: string;
   alt: string;
   caption: string;
 };

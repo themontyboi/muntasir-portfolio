@@ -1,150 +1,69 @@
 # Muntasir Hasan Portfolio
 
-Phase 1 personal portfolio website for Muntasir Hasan, a Melbourne-based Bachelor of Cybersecurity student targeting entry-level IT support, service desk, junior cybersecurity, SOC analyst level 1, technical support and junior security operations roles.
+A Next.js portfolio for a Melbourne-based Bachelor of Cybersecurity student building local AI systems, software applications and academic security projects.
 
-This version is a responsive, accessible one-page site with a dark technology-focused design and a lightweight CSS iris preview prepared for a future cinematic Three.js introduction.
+## Current Experience
 
-## Technology Stack
+- Gothic Green design with a responsive, CSS-built interactive eye.
+- An occasional CSS name glitch, with decorative layers hidden from assistive technology and a static reduced-motion mode.
+- An accessible resume modal opened from navigation or the hero. No downloadable PDF is required or linked.
+- Desk AI Tutor Lab Alpha as the first flagship project, with a dedicated case study at `/projects/desk-ai-tutor`.
+- Project screenshot carousels, keyboard controls and enlarged image views.
+- Academic security and forensics evidence galleries with accurate contribution and scope notes.
+- Abyss Bond animated GIF preview and playable Unity Web build. The game iframe is mounted only after Play Prototype and Load Game; desktop keyboard and mouse are recommended.
 
-- Next.js App Router
-- TypeScript
-- Tailwind CSS v4
-- React
-- Lucide React icons
-- Local typed data files
-- CSS transitions and lightweight visual effects
+## Stack
 
-## Installation
+Next.js App Router, React, TypeScript, Tailwind CSS v4 and Lucide React. Portfolio content is local typed data; the AI tutor described in the case study is a separate local application, not an AI service running inside this portfolio.
 
-```bash
-npm install
+## Local Development
+
+```powershell
+npm.cmd install
+npm.cmd run dev
 ```
 
-## Development
+Open the local URL printed by Next.js. If the default port is occupied, use `npm.cmd run dev -- -p 3002` or another available port.
 
-```bash
-npm run dev
+## Validation and Production Preview
+
+```powershell
+npm.cmd run lint
+npx.cmd tsc --noEmit
+npm.cmd run build
+npm.cmd run start -- -p 3001
 ```
 
-Open the local URL shown in the terminal, usually `http://localhost:3000`.
+The production server serves the most recent build. Rebuild and restart it after source changes. Use the development server for live editing.
 
-## Production Build
+Check desktop, tablet, 390px and 320px layouts, keyboard navigation, modal focus return, reduced motion, screenshot controls and Unity's user-triggered loading. A successful build does not replace visual review.
 
-```bash
-npm run build
-```
+## Content and Assets
 
-## Linting
+- `src/data/portfolio.ts`: identity, production URL, career interests, skills, projects, education, experience, resume highlights and course certificates.
+- `src/data/desk-ai-tutor.ts`: case-study capabilities, architecture branches, engineering challenges, reported validation, limitations and planned work.
+- `src/lib/project-gallery.ts`: discovers actual screenshots from `public/projects/desk-ai-tutor`, sorts filenames and supplies captions/alt text. Add descriptions for new screenshots here and rebuild.
+- `src/components/projects/ProjectGallery.tsx`: shared carousel and accessible enlarged image experience.
+- `public/projects`: project previews and screenshots.
+- `public/projects/evidence`: academic evidence images.
+- `public/unity/abyss-bond`: the playable Unity Web export.
+- `public/certificates`: verified course-certificate assets.
 
-```bash
-npm run lint
-```
+The homepage retains the study-sessions screenshot as its flagship preview. The Desk AI Tutor case-study hero uses the source-aware study view. Both reference supplied public assets directly.
 
-## Editing Portfolio Data
+Keep project claims grounded in actual work. The AI tutor is an experimental Windows PC-based Alpha; its test results are attributed to the supplied project brief. Keep implemented capabilities, reported tests and future work distinct. Do not add invented deployment links, dates, credentials, users or performance metrics.
 
-Most personal content is centralised in:
+## GitHub and Vercel
 
-```text
-src/data/portfolio.ts
-```
+Repository: `themontyboi/muntasir-portfolio`.
 
-Use this file to update:
+Production URL: https://muntasir-portfolio-eight.vercel.app
 
-- Name, location, resume path and social links
-- Email, GitHub or future social profiles
-- Career focus text
-- Technical skills
-- Project cards and future case-study fields
-- Education and coursework
-- Academic highlights
-- Certificate details
-- Transferable work experience
+The repository is connected to Vercel. An approved push to the configured production branch triggers its Git deployment workflow.
 
-Do not add unsupported claims, invented employment dates, fake credentials, fake GitHub links or fake live-demo links.
+1. Review Git status, branch, remote, changes and validation results.
+2. Stage only intended source, documentation and public assets. Keep environment files, local logs, dependency folders and generated builds out of version control.
+3. Obtain release approval, create a descriptive commit and push without force-pushing or rewriting existing history.
+4. In Vercel, open the project and inspect the deployment associated with that commit. Confirm READY status and check the production pages before reporting a successful deployment.
 
-## Adding Project Images
-
-Place screenshots in:
-
-```text
-public/projects
-```
-
-Then update the matching project object in `src/data/portfolio.ts`:
-
-```ts
-image: "/projects/example-screenshot.png"
-```
-
-Only use screenshots that accurately represent the real project.
-
-## Adding the Resume PDF
-
-Place the real resume PDF at:
-
-```text
-public/resume/Muntasir_Hasan_Resume.pdf
-```
-
-The website already links to:
-
-```text
-/resume/Muntasir_Hasan_Resume.pdf
-```
-
-No fake resume PDF has been generated.
-
-## Adding Certificate Details
-
-Certificate entries are currently placeholders in:
-
-```text
-src/data/portfolio.ts
-```
-
-Update each certificate after the exact title and credential details are confirmed:
-
-```ts
-{
-  title: "Exact certificate title",
-  provider: "Provider",
-  issueDate: "YYYY-MM-DD",
-  credentialUrl: "https://...",
-  image: "/certificates/example-certificate.png",
-  note: "Verified certificate details added."
-}
-```
-
-Place certificate images in:
-
-```text
-public/certificates
-```
-
-Udemy course entries should not be described as industry certifications unless a recognised industry credential is actually supplied.
-
-## Deploying to Vercel
-
-1. Push the project to a Git repository.
-2. Import the repository in Vercel.
-3. Keep the framework preset as Next.js.
-4. Use the default build command:
-
-```bash
-npm run build
-```
-
-5. Deploy after adding the real resume PDF and any desired screenshots.
-
-## Phase 2 Plan
-
-The hero is intentionally split into text and visual components. The current CSS-only `IrisPreview` can later be replaced by a cinematic scene using:
-
-- Three.js
-- React Three Fiber
-- GSAP ScrollTrigger
-- Closed-eye opening animation
-- Iris tunnel
-- Scroll-controlled camera movement
-
-Future 3D work should mount in `src/components/sections/IrisPreview.tsx` or replace that component while keeping portfolio content separate from animation logic.
+No additional CI pipeline, cloud AI deployment or custom domain is required by this portfolio. Local `.vercel` configuration and environment files remain private.

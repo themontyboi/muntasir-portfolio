@@ -13,8 +13,8 @@ export function CareerFocus() {
     <section className="section-shell">
       <SectionHeading
         eyebrow="Career focus"
-        title="Entry-level directions"
-        description="The portfolio is positioned around roles where technical curiosity, clear communication and disciplined troubleshooting matter."
+        title="Where I Want to Contribute"
+        description="Career interests shaped by my studies and personal projects."
       />
       <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">
         {careerFocus.map((item) => {

@@ -1,12 +1,16 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { navItems, siteConfig } from "@/data/portfolio";
 import { openResumeModal } from "@/lib/resume-modal";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement | null>(null);
+  const isHomepage = usePathname() === "/";
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
@@ -33,15 +37,15 @@ export function Header() {
         className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
         aria-label="Primary navigation"
       >
-        <a
-          href="#top"
+        <Link
+          href={isHomepage ? "#top" : "/#top"}
           className="group inline-flex items-center gap-3 rounded-full text-sm font-semibold text-[var(--text-primary)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]"
         >
           <span className="grid size-9 place-items-center rounded-full border border-[rgba(154,132,80,0.45)] bg-[var(--accent-soft)] text-[var(--accent-primary)] shadow-[inset_0_0_0_1px_rgba(79,209,125,0.15)]">
             MH
           </span>
           <span className="hidden sm:inline">{siteConfig.name}</span>
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-1 md:flex">
           {navItems.map((item) =>
@@ -55,18 +59,19 @@ export function Header() {
                 {item.label}
               </button>
             ) : (
-              <a
+              <Link
                 key={item.href}
-                href={item.href}
+                href={isHomepage ? item.href! : `/${item.href}`}
                 className="rounded-full px-4 py-2 text-sm font-medium text-[var(--text-secondary)] transition hover:bg-[var(--accent-soft)] hover:text-[var(--text-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]"
               >
                 {item.label}
-              </a>
+              </Link>
             ),
           )}
         </div>
 
         <button
+          ref={menuButtonRef}
           type="button"
           className="inline-flex size-10 items-center justify-center rounded-full border border-[var(--border-primary)] text-[var(--text-primary)] transition hover:bg-[var(--accent-soft)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)] md:hidden"
           aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
@@ -91,21 +96,22 @@ export function Header() {
                   type="button"
                   className="rounded-md px-4 py-3 text-left text-base font-medium text-[var(--text-secondary)] transition hover:bg-[var(--accent-soft)] hover:text-[var(--text-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]"
                   onClick={() => {
+                    menuButtonRef.current?.focus();
                     setIsOpen(false);
-                    openResumeModal();
+                    requestAnimationFrame(openResumeModal);
                   }}
                 >
                   {item.label}
                 </button>
               ) : (
-                <a
+                <Link
                   key={item.href}
-                  href={item.href}
+                  href={isHomepage ? item.href! : `/${item.href}`}
                   className="rounded-md px-4 py-3 text-base font-medium text-[var(--text-secondary)] transition hover:bg-[var(--accent-soft)] hover:text-[var(--text-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
-                </a>
+                </Link>
               ),
             )}
           </div>

@@ -10,6 +10,7 @@ import type {
 
 export const siteConfig = {
   name: "Muntasir Hasan",
+  url: "https://muntasir-portfolio-eight.vercel.app",
   location: "Melbourne, Victoria, Australia",
   shortLocation: "Melbourne, Australia",
   email: "muntasirprof@gmail.com",
@@ -43,22 +44,22 @@ export const socialLinks: SocialLink[] = [
 
 export const careerFocus: CareerFocus[] = [
   {
-    title: "IT Support and Service Desk",
-    icon: "headphones",
-    description:
-      "Troubleshooting, clear communication, Windows environments, user support and systematic problem solving.",
-  },
-  {
-    title: "Security Operations",
-    icon: "shield",
-    description:
-      "Monitoring fundamentals, network analysis, incident response concepts and security investigation.",
-  },
-  {
-    title: "Secure Development",
+    title: "Applied AI & Software Engineering",
     icon: "code",
     description:
-      "Python, C#, application security, DevSecOps foundations and practical project development.",
+      "Local AI applications, backend/frontend integration, APIs, software reliability and system development.",
+  },
+  {
+    title: "Cybersecurity & Security Operations",
+    icon: "shield",
+    description:
+      "Security analysis, network investigation, digital forensics, vulnerability assessment and defensive security.",
+  },
+  {
+    title: "IT Systems & Technical Support",
+    icon: "headphones",
+    description:
+      "Troubleshooting, technical communication, Windows/Linux fundamentals and systematic problem solving.",
   },
 ];
 
@@ -96,11 +97,27 @@ export const skills = {
     "CSS",
     "JavaScript",
     "React",
+    "Next.js",
+    "TypeScript",
     "Firebase",
     "Unity",
     "New Input System",
   ],
-  "DevOps / infrastructure exposure": [
+  "AI Systems & Application Engineering": [
+    "Local LLM integration",
+    "Ollama",
+    "Qwen",
+    "FastAPI",
+    "REST APIs",
+    "Document ingestion",
+    "Embeddings and retrieval",
+    "Speech-to-text integration",
+    "Text-to-speech integration",
+    "Application state management",
+    "Asynchronous operation handling",
+    "Testing and evaluation",
+  ],
+  "DevOps / Infrastructure Exposure": [
     "Kubernetes",
     "Docker concepts",
     "Prometheus",
@@ -111,6 +128,144 @@ export const skills = {
 };
 
 export const projects: Project[] = [
+  {
+    title: "Desk AI Tutor Lab Alpha",
+    slug: "desk-ai-tutor",
+    category: "Flagship · Local AI Engineering",
+    description:
+      "A local-first AI tutoring Alpha combining a Next.js interface, FastAPI backend, local language generation, speech recognition, speech synthesis, document retrieval and durable study sessions.",
+    longDescription:
+      "Desk AI Tutor Lab Alpha explores how local language models and deterministic application logic can work together in a reliable study environment. The system integrates Ollama/Qwen, faster-whisper, Kokoro, document preparation and bounded retrieval, while the application retains control over session ownership, conversation history, cancellation and source readiness. This is an experimental Windows PC-based Alpha, not a finished consumer product.",
+    technologies: [
+      "Next.js", "React", "TypeScript", "Python", "FastAPI", "Ollama", "Qwen3 4B",
+      "faster-whisper", "Kokoro", "eSpeak NG", "Local embeddings", "Document retrieval",
+    ],
+    status: "Experimental Alpha — Working Local Prototype",
+    detailsUrl: "/projects/desk-ai-tutor",
+    image: null,
+    imageFallback: "Desk AI Tutor screenshots",
+    githubUrl: null,
+    liveUrl: null,
+    featured: true,
+    flagship: true,
+    comingSoon: false,
+    cardTechnologySummary: "Next.js · TypeScript · FastAPI · Ollama",
+    features: [
+      "Local-first AI tutor workflow",
+      "Conversational study interaction",
+      "Document-grounded study support",
+      "Persistent study sessions",
+      "Speech input and speech output",
+      "Retrieval-based learning flow",
+      "Ongoing engineering and architecture refinement",
+    ],
+    implementationHighlights: [
+      "Next.js interface and FastAPI orchestration with locally running Ollama/Qwen models",
+      "Local faster-whisper recognition and Kokoro speech synthesis",
+      "Material preparation for PDF, PowerPoint, EPUB, DOCX, TXT and Markdown",
+      "Deterministic session ownership and immutable conversation history",
+      "Cancellation, barge-in and sequential audio playback",
+      "Bounded retrieval with explicit source-readiness warnings",
+    ],
+    engineeringFocus:
+      "My main focus in this project is the practical engineering around local AI systems: coordinating UI, backend logic, study state, retrieval, speech interaction and structured user flow in a way that feels useful and reliable. Application code owns session state, source readiness and cancellation; the model generates explanations.",
+    developmentNote:
+      "This project is currently in active experimental development. My ongoing work includes improving study flows, refining the tutoring logic, strengthening the user experience and continuing to evolve the system architecture.",
+    limitationsNote:
+      "A working Alpha for controlled personal testing. Local speech latency, recognition accuracy, physical-audio reliability and response consistency remain areas for improvement. It does not claim validated learner mastery or production readiness.",
+  },
+  {
+    title: "Live Sticky Wall - Real-Time Audience Feedback",
+    slug: "live-sticky-wall",
+    category: "Real-Time Collaborative Web Application",
+    description:
+      "A real-time audience feedback web app where participants scan a QR code, submit typed or hand-drawn notes from their phones and see them appear live on a shared digital wall.",
+    longDescription:
+      "Live Sticky Wall is an interactive feedback application designed for classrooms, workshops, events and collaborative sessions. A facilitator displays a session wall containing a QR code. Participants scan the code from their phones, choose a feedback category and submit either typed or hand-drawn notes. Notes are synchronised through Firebase and displayed on the shared wall. An administration dashboard provides session statistics, filtering and note-management controls.",
+    technologies: [
+      "React", "Vite", "Firebase Firestore", "Tailwind CSS", "Framer Motion",
+      "React Router", "QR code integration",
+    ],
+    status: "Working prototype / Active development",
+    image: "/projects/live-sticky-wall/wall.jpg",
+    imageFallback: "Audience feedback app preview",
+    githubUrl: "https://github.com/themontyboi/live-sticky-wall",
+    liveUrl: null,
+    featured: true,
+    comingSoon: false,
+    cardTitleLabel: "Live Sticky Wall",
+    cardCategoryLabel: "Real-Time Web Application",
+    cardTechnologySummary: "React • Firebase • Tailwind CSS",
+    cardStatusLabel: "Working Prototype",
+    features: [
+      "QR-based session access",
+      "Typed and hand-drawn notes",
+      "Firebase real-time updates",
+      "Admin dashboard with filtering, statistics and note management",
+      "Categorised feedback",
+      "Mobile-first interaction",
+      "Animated note presentation",
+    ],
+    detailsGallery: [
+      {
+        src: "/projects/live-sticky-wall/wall.jpg",
+        title: "Shared Live Wall",
+        alt: "Shared Live Wall showing categorised participant feedback and QR session access",
+        caption:
+          "Real-time wall displaying categorised participant feedback with QR-based session access.",
+      },
+      {
+        src: "/projects/live-sticky-wall/drawing-good.jpg",
+        title: "Mobile Drawing Interface",
+        alt: "Mobile Drawing Interface for submitting hand-drawn feedback",
+        caption: "Participants can submit hand-drawn feedback directly from a mobile device.",
+      },
+      {
+        src: "/projects/live-sticky-wall/admin-dashboard.jpg",
+        title: "Administration Dashboard",
+        alt: "Administration Dashboard with session statistics and note management controls",
+        caption:
+          "Session overview with category statistics, filtering and note-management controls.",
+      },
+      {
+        src: "/projects/live-sticky-wall/drawing-idea.jpg",
+        title: "Feedback Categories",
+        alt: "Feedback Categories screen for Good, Improve, Idea and Question notes",
+        caption:
+          "Participants choose between Good, Improve, Idea and Question before creating a note.",
+      },
+    ],
+  },
+  {
+    title: "Abyss Bond - Unity Third-Person Gameplay Prototype",
+    slug: "unity-game-development",
+    category: "Personal Game Development Project",
+    description:
+      "A playable third-person Unity prototype exploring movement, camera systems, combat interaction, companion behaviour and browser deployment.",
+    longDescription:
+      "Abyss Bond is a playable personal Unity prototype focused on third-person controls, camera systems, combat interaction experiments, companion behaviour and browser-based deployment through Unity Web.",
+    technologies: ["Unity 6", "C#", "URP", "New Input System", "Web"],
+    status: "Playable Prototype",
+    image: "/projects/abyss-bond/abyss-bond-gameplay.gif",
+    imageFallback: "Gameplay preview coming soon",
+    previewAlt: "Abyss Bond Unity gameplay prototype",
+    githubUrl: null,
+    liveUrl: null,
+    featured: true,
+    comingSoon: false,
+    cardTitleLabel: "Abyss Bond",
+    cardCategoryLabel: "Unity Gameplay Prototype",
+    cardStatusLabel: "Playable Prototype",
+    playable: {
+      url: "/unity/abyss-bond/index.html",
+      desktopNote:
+        "This prototype is intended for desktop keyboard and mouse. On narrow mobile screens, open it on a desktop device for a usable experience.",
+    },
+    implementationHighlights: [
+      "Unity New Input System", "Third-person controls", "Camera systems",
+      "Combat prototype", "Companion behaviour", "Web build",
+    ],
+  },
   {
     title: "Web Application Vulnerability Assessment Lab",
     slug: "ethical-hacking-security-lab",
@@ -263,103 +418,6 @@ export const projects: Project[] = [
       "kube-prometheus-stack monitoring through Helm",
     ],
   },
-  {
-    title: "Abyss Bond - Unity Third-Person Gameplay Prototype",
-    slug: "unity-game-development",
-    category: "Personal Game Development Project",
-    description:
-      "A playable third-person Unity prototype exploring player movement, camera systems, combat interactions, companion behaviour and browser deployment.",
-    longDescription:
-      "Abyss Bond is a playable personal Unity prototype focused on third-person controls, camera systems, combat interaction experiments, companion behaviour and browser-based deployment through Unity Web.",
-    technologies: ["Unity 6", "C#", "URP", "New Input System", "Web"],
-    status: "Playable Prototype",
-    image: "/projects/abyss-bond/abyss-bond-gameplay.gif",
-    imageFallback: "Gameplay preview coming soon",
-    previewAlt: "Abyss Bond Unity gameplay prototype",
-    githubUrl: null,
-    liveUrl: null,
-    featured: true,
-    comingSoon: false,
-    cardTitleLabel: "Abyss Bond",
-    cardCategoryLabel: "Unity Gameplay Prototype",
-    cardStatusLabel: "Playable Prototype",
-    playable: {
-      url: "/unity/abyss-bond/index.html",
-      desktopNote:
-        "This prototype is intended for desktop keyboard and mouse. On narrow mobile screens, open it on a desktop device for a usable experience.",
-    },
-    implementationHighlights: [
-      "Unity New Input System",
-      "Third-person controls",
-      "Camera systems",
-      "Combat prototype",
-      "Companion behaviour",
-      "Web build",
-    ],
-  },
-  {
-    title: "Live Sticky Wall - Real-Time Audience Feedback",
-    slug: "live-sticky-wall",
-    category: "Real-Time Collaborative Web Application",
-    description:
-      "A real-time audience feedback platform where participants scan a QR code, submit typed or hand-drawn sticky notes from their phones and see them appear on a shared live wall.",
-    longDescription:
-      "Live Sticky Wall is an interactive feedback application designed for classrooms, workshops, events and collaborative sessions. A facilitator displays a session wall containing a QR code. Participants scan the code from their phones, choose a feedback category and submit either typed or hand-drawn notes. Notes are synchronised through Firebase and displayed on the shared wall. An administration dashboard provides session statistics, filtering and note-management controls.",
-    technologies: [
-      "React",
-      "Vite",
-      "Firebase Firestore",
-      "Tailwind CSS",
-      "Framer Motion",
-      "React Router",
-      "QR code integration",
-    ],
-    status: "Working prototype / Active development",
-    image: "/projects/live-sticky-wall/wall.jpg",
-    imageFallback: "Audience feedback app preview",
-    githubUrl: "https://github.com/themontyboi/live-sticky-wall",
-    liveUrl: null,
-    featured: true,
-    comingSoon: false,
-    cardTitleLabel: "Live Sticky Wall",
-    cardCategoryLabel: "Real-Time Web Application",
-    cardTechnologySummary: "React • Firebase • Tailwind CSS",
-    cardStatusLabel: "Working Prototype",
-    features: [
-      "Responsive participant interface",
-      "QR session access",
-      "Typed and drawn notes",
-      "Firebase real-time updates",
-      "Category-based feedback",
-      "Administration dashboard",
-      "Animated note presentation",
-    ],
-    detailsGallery: [
-      {
-        src: "/projects/live-sticky-wall/wall.jpg",
-        alt: "Shared Live Wall showing categorised participant feedback and QR session access",
-        caption:
-          "Real-time wall displaying categorised participant feedback with QR-based session access.",
-      },
-      {
-        src: "/projects/live-sticky-wall/drawing-good.jpg",
-        alt: "Mobile Drawing Interface for submitting hand-drawn feedback",
-        caption: "Participants can submit hand-drawn feedback directly from a mobile device.",
-      },
-      {
-        src: "/projects/live-sticky-wall/admin-dashboard.jpg",
-        alt: "Administration Dashboard with session statistics and note management controls",
-        caption:
-          "Session overview with category statistics, filtering and note-management controls.",
-      },
-      {
-        src: "/projects/live-sticky-wall/drawing-idea.jpg",
-        alt: "Feedback Categories screen for Good, Improve, Idea and Question notes",
-        caption:
-          "Participants choose between Good, Improve, Idea and Question before creating a note.",
-      },
-    ],
-  },
 ];
 
 export const education: EducationItem[] = [
@@ -407,6 +465,19 @@ export const academicHighlights = [
 
 export const resumeProjects = [
   {
+    title: "Desk AI Tutor Lab Alpha",
+    subtitle: "Local-first multimodal tutoring Alpha",
+    description:
+      "Built an experimental Next.js and FastAPI tutor integrating local Ollama models, speech recognition and synthesis, document retrieval and durable study sessions. Designed application-owned state, immutable history and cancellation-safe audio controls.",
+    tech: "Next.js • TypeScript • Python • FastAPI • Ollama • Local retrieval",
+    status: "Experimental Alpha / Active development",
+    bullets: [
+      "Integrated local language generation, speech input/output and bounded document retrieval with Next.js and FastAPI.",
+      "Implemented durable study sessions, immutable history and cancellation-safe operation controls.",
+      "Documented local validation and remaining speech reliability and latency limitations.",
+    ],
+  },
+  {
     title: "Live Sticky Wall",
     subtitle: "Real-time collaborative web application",
     description:
@@ -424,15 +495,15 @@ export const resumeProjects = [
     status: "Playable browser prototype",
   },
   {
-    title: "Ethical Hacking Security Lab",
-    subtitle: "Academic Red/Blue Team project",
+    title: "Web Application Vulnerability Assessment Lab",
+    subtitle: "Group academic Red/Blue Team project",
     description:
       "Performed authorised testing in an isolated Kali Linux / Metasploitable / DVWA environment. The project included service enumeration using Nmap, controlled SQL injection validation, defensive configuration changes and verification testing.",
     tech: "Kali Linux • Nmap • DVWA • SQL Injection testing",
   },
   {
-    title: "Digital Forensics Investigation",
-    subtitle: "Academic investigation project",
+    title: "Computer Forensics Investigation",
+    subtitle: "Group academic investigation project",
     description:
       "Analysed a supplied forensic disk image using Autopsy, performed evidence integrity validation, reviewed system and user artefacts and helped reconstruct relevant activity.",
     tech: "Autopsy • FTK Imager • Digital evidence analysis",
@@ -475,11 +546,10 @@ export const experience: ExperienceItem[] = [
     ],
   },
   {
-    role: "Computer Teacher",
+    role: "Computer Teacher — Vacation Program",
     employer: "Kalindi Hospital",
     location: "New Delhi, India",
     dates: "Six-month contract",
-    supportingLabel: "Vacation Program · Six-month contract",
     themes: [
       "Assisted learners with basic computer operation and software use.",
       "Explained technical concepts in accessible language.",

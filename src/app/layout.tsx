@@ -1,13 +1,18 @@
 import type { Metadata, Viewport } from "next";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { ResumeModal } from "@/components/resume/ResumeModal";
+import { siteConfig } from "@/data/portfolio";
 import "./globals.css";
 
+const portfolioTitle = "Muntasir Hasan | Cybersecurity, Local AI & Software Engineering";
+const portfolioDescription =
+  "Portfolio of Muntasir Hasan, a Melbourne-based Bachelor of Cybersecurity student building local AI systems, cybersecurity projects and software applications.";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://muntasir-hasan-portfolio.vercel.app"),
-  title: "Muntasir Hasan | Cybersecurity and IT Portfolio",
-  description:
-    "Portfolio of Muntasir Hasan, a Melbourne-based Bachelor of Cybersecurity student interested in IT support, security operations, secure development and game technology.",
+  metadataBase: new URL(siteConfig.url),
+  title: portfolioTitle,
+  description: portfolioDescription,
   robots: {
     index: true,
     follow: true,
@@ -15,16 +20,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_AU",
-    title: "Muntasir Hasan | Cybersecurity and IT Portfolio",
-    description:
-      "Portfolio of Muntasir Hasan, a Melbourne-based Bachelor of Cybersecurity student interested in IT support, security operations, secure development and game technology.",
+    title: portfolioTitle,
+    description: portfolioDescription,
     siteName: "Muntasir Hasan Portfolio",
   },
   twitter: {
     card: "summary",
-    title: "Muntasir Hasan | Cybersecurity and IT Portfolio",
-    description:
-      "Portfolio of Muntasir Hasan, a Melbourne-based Bachelor of Cybersecurity student interested in IT support, security operations, secure development and game technology.",
+    title: portfolioTitle,
+    description: portfolioDescription,
   },
   icons: {
     icon: "/favicon.ico",
@@ -54,6 +57,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <ResumeModal />
       </body>
     </html>
   );

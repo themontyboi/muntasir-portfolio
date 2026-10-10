@@ -1,17 +1,14 @@
 import { ArrowRight, Link2, Mail, MapPin } from "lucide-react";
 import { siteConfig } from "@/data/portfolio";
 import { SingleWarriorEye } from "@/components/hero/SingleWarriorEye";
+import { GlitchName } from "@/components/hero/GlitchName";
 import { ResumeButton } from "@/components/ui/ResumeButton";
 
 const quickFacts = [
-  "Bachelor of Cybersecurity",
-  "Melbourne",
-  "Security Operations",
-  "IT Support",
-  "Nmap",
-  "Wireshark",
-  "Burp Suite",
-  "Web + Unity Development",
+  "Cybersecurity",
+  "Local AI Systems",
+  "Python & FastAPI",
+  "Software Development",
 ];
 
 export function Hero() {
@@ -21,22 +18,22 @@ export function Hero() {
       className="relative isolate overflow-hidden px-4 pb-20 pt-32 sm:px-6 lg:px-8 lg:pb-28 lg:pt-40"
     >
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,rgba(79,209,125,0.10),transparent_32%),radial-gradient(ellipse_at_bottom_left,rgba(154,132,80,0.055),transparent_28%),linear-gradient(180deg,rgba(237,245,239,0.035),transparent_28%)]" />
-      <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="order-2 lg:order-1">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="order-2 min-w-0 lg:order-1">
           <p className="mb-5 inline-flex rounded-full border border-[var(--border-primary)] bg-[var(--accent-soft)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent-primary)]">
-            Cybersecurity - IT Support - Development
+            Cybersecurity · Local AI · Software Engineering
           </p>
           <h1 className="display-heading max-w-4xl text-5xl font-semibold tracking-tight text-[var(--text-primary)] sm:text-6xl lg:text-7xl">
-            Muntasir Hasan
+            <GlitchName name={siteConfig.name} />
           </h1>
           <p className="mt-6 max-w-2xl text-2xl font-medium leading-snug text-[var(--text-primary)]">
-            Cybersecurity student specialising in security operations, IT support and secure
-            software development.
+            Cybersecurity student building local AI systems, secure software and interactive applications.
           </p>
           <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--text-secondary)] sm:text-lg">
-            I&apos;m a Bachelor of Cybersecurity student in Melbourne, building practical experience
-            through ethical hacking, digital forensics, secure application development, networking
-            and software projects.
+            I&apos;m a Bachelor of Cybersecurity student in Melbourne, developing practical experience
+            across AI systems, cybersecurity and software engineering. My projects include a
+            local-first multimodal AI tutor, real-time web applications, security investigations
+            and playable Unity prototypes.
           </p>
           <div className="mt-7 flex max-w-2xl flex-wrap gap-2">
             {quickFacts.map((fact) => (
@@ -72,7 +69,7 @@ export function Hero() {
           </div>
           <div className="mt-8 flex flex-wrap items-center gap-3 text-sm text-[var(--text-secondary)]">
             <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border-primary)] bg-[rgba(17,28,21,0.72)] px-4 py-2">
-              <span className="size-2 rounded-full bg-[var(--accent-primary)]" />
+              <span className="size-2 shrink-0 rounded-full bg-[var(--accent-primary)]" />
               Open to entry-level IT and cybersecurity opportunities
             </span>
             <span className="inline-flex items-center gap-2">
@@ -81,7 +78,7 @@ export function Hero() {
             </span>
           </div>
         </div>
-        <div className="order-1 mx-auto w-full max-w-[47.5rem] lg:order-2 lg:max-w-none">
+        <div className="order-1 mx-auto w-full min-w-0 max-w-[47.5rem] lg:order-2 lg:max-w-none">
           <SingleWarriorEye />
         </div>
       </div>
