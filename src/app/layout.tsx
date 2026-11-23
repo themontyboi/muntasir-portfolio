@@ -7,7 +7,7 @@ import "./globals.css";
 
 const portfolioTitle = "Muntasir Hasan | Cybersecurity, Local AI & Software Engineering";
 const portfolioDescription =
-  "Portfolio of Muntasir Hasan, a Melbourne-based Bachelor of Cybersecurity student building local AI systems, cybersecurity projects and software applications.";
+  "Portfolio of Muntasir Hasan, a Melbourne-based developer building software applications, local AI tools, video workflows and playable game prototypes.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),

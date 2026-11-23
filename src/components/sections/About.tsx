@@ -5,21 +5,17 @@ export function About() {
     <section id="about" className="section-shell">
       <SectionHeading
         eyebrow="About"
-        title="Building at the intersection of AI, software and cybersecurity"
+        title="How I build"
       />
       <div className="mx-auto max-w-4xl space-y-5 text-base leading-8 text-[var(--text-secondary)] md:text-lg">
         <p>
-          I&apos;m a Bachelor of Cybersecurity student based in Melbourne, with interests across
-          local AI systems, secure software, technical support and interactive application development.
+          I&apos;m a Melbourne-based developer who works across the interface and the systems behind it.
+          Recent projects include cinema booking with single-use ticket admission, creative approvals
+          tied to specific revisions, and a local video editor that can retry interrupted renders.
         </p>
         <p>
-          Alongside my cybersecurity studies, I build experimental software to understand how
-          different technologies work together. My work includes local language models, speech
-          interaction, document retrieval, real-time web applications and Unity gameplay prototypes.
-        </p>
-        <p>
-          I&apos;m particularly interested in building reliable, useful systems and understanding
-          the engineering decisions behind them.
+          My cybersecurity background shapes the questions I ask as I build: who can access the data,
+          what survives a restart, and how someone can recover when a step fails.
         </p>
       </div>
     </section>

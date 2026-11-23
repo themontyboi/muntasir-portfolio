@@ -54,11 +54,11 @@ export default function Home() {
       />
       <main id="main-content">
         <Hero />
+        <FeaturedApps />
+        <Projects projects={getPortfolioProjects()} />
         <About />
         <CareerFocus />
         <Skills />
-        <FeaturedApps />
-        <Projects projects={getPortfolioProjects()} />
         <Education />
         <Certificates />
         <Experience />

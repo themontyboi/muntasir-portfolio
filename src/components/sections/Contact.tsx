@@ -8,7 +8,7 @@ export function Contact() {
       <SectionHeading
         eyebrow="Let's connect"
         title="Interested in working together?"
-        description="I am currently open to entry-level IT support, service desk and cybersecurity opportunities in Melbourne."
+        description="I’m open to software, applied AI and cybersecurity opportunities in Melbourne."
       />
       <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-2">
         <a href={`mailto:${siteConfig.email}`} className="contact-tile">

@@ -142,7 +142,7 @@ export function ResumeModal() {
             <h2 id={titleId} className="display-heading">
               {siteConfig.name}
             </h2>
-            <p>Cybersecurity Student | IT Support | AI and Software</p>
+            <p>Software Development | Local AI | Cybersecurity</p>
             <p>{siteConfig.location}</p>
           </div>
           <button
@@ -175,11 +175,10 @@ export function ResumeModal() {
           <section className="resume-modal-section">
             <h3>Profile</h3>
             <p>
-              Cybersecurity undergraduate in Melbourne building local AI systems and software
-              engineering projects alongside academic security labs. Practical work includes a
-              multimodal AI tutoring Alpha, interactive web applications, digital forensics and
-              Unity prototypes. Interested in technical support, applied software development
-              and security operations opportunities.
+              Melbourne-based developer building web applications, local AI tools and gameplay
+              prototypes. Recent work includes a multimodal AI tutor, a 26-app showcase and
+              NEONCUT, a local video editing and render workspace. Cybersecurity studies inform
+              my approach to access control, evidence handling and failure recovery.
             </p>
           </section>
 
