@@ -1,6 +1,6 @@
 export type NavItem = {
   label: string;
-  href?: `#${string}`;
+  href?: `#${string}` | `/${string}`;
   action?: "resume";
 };
 

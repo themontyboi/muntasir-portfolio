@@ -7,6 +7,7 @@ import type {
   Project,
   SocialLink,
 } from "@/types/portfolio";
+import { recentGameProjects } from "@/data/game-projects";
 
 export const siteConfig = {
   name: "Muntasir Hasan",
@@ -30,6 +31,7 @@ export const navItems: NavItem[] = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
+  { label: "Apps", href: "/apps" },
   { label: "Education", href: "#education" },
   { label: "Resume", action: "resume" },
   { label: "Experience", href: "#experience" },
@@ -266,6 +268,7 @@ export const projects: Project[] = [
       "Combat prototype", "Companion behaviour", "Web build",
     ],
   },
+  ...recentGameProjects,
   {
     title: "Web Application Vulnerability Assessment Lab",
     slug: "ethical-hacking-security-lab",

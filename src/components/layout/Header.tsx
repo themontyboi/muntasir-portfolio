@@ -7,6 +7,10 @@ import { usePathname } from "next/navigation";
 import { navItems, siteConfig } from "@/data/portfolio";
 import { openResumeModal } from "@/lib/resume-modal";
 
+function navigationHref(href: NonNullable<(typeof navItems)[number]["href"]>, isHomepage: boolean) {
+  return !isHomepage && href.startsWith("#") ? `/${href}` : href;
+}
+
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement | null>(null);
@@ -47,7 +51,7 @@ export function Header() {
           <span className="hidden sm:inline">{siteConfig.name}</span>
         </Link>
 
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-1 lg:flex">
           {navItems.map((item) =>
             item.action === "resume" ? (
               <button
@@ -61,7 +65,7 @@ export function Header() {
             ) : (
               <Link
                 key={item.href}
-                href={isHomepage ? item.href! : `/${item.href}`}
+                href={navigationHref(item.href!, isHomepage)}
                 className="rounded-full px-4 py-2 text-sm font-medium text-[var(--text-secondary)] transition hover:bg-[var(--accent-soft)] hover:text-[var(--text-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]"
               >
                 {item.label}
@@ -73,7 +77,7 @@ export function Header() {
         <button
           ref={menuButtonRef}
           type="button"
-          className="inline-flex size-10 items-center justify-center rounded-full border border-[var(--border-primary)] text-[var(--text-primary)] transition hover:bg-[var(--accent-soft)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)] md:hidden"
+          className="inline-flex size-10 items-center justify-center rounded-full border border-[var(--border-primary)] text-[var(--text-primary)] transition hover:bg-[var(--accent-soft)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)] lg:hidden"
           aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={isOpen}
           aria-controls="mobile-navigation"
@@ -86,7 +90,7 @@ export function Header() {
       {isOpen ? (
         <div
           id="mobile-navigation"
-          className="border-t border-[var(--border-primary)] bg-[var(--background-primary)] px-4 py-4 shadow-2xl md:hidden"
+          className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-[var(--border-primary)] bg-[var(--background-primary)] px-4 py-4 shadow-2xl lg:hidden"
         >
           <div className="mx-auto flex max-w-7xl flex-col gap-1">
             {navItems.map((item) =>
@@ -106,7 +110,7 @@ export function Header() {
               ) : (
                 <Link
                   key={item.href}
-                  href={isHomepage ? item.href! : `/${item.href}`}
+                  href={navigationHref(item.href!, isHomepage)}
                   className="rounded-md px-4 py-3 text-base font-medium text-[var(--text-secondary)] transition hover:bg-[var(--accent-soft)] hover:text-[var(--text-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]"
                   onClick={() => setIsOpen(false)}
                 >

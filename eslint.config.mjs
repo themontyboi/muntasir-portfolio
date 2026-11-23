@@ -12,6 +12,7 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "public/unity/**",
+    "public/apps/20-pigment-press/assets/**",
     "public/certificates/unity/**",
     "next-env.d.ts",
   ]),

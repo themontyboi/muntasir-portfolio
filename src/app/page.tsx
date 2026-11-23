@@ -4,6 +4,7 @@ import { Certificates } from "@/components/sections/Certificates";
 import { Contact } from "@/components/sections/Contact";
 import { Education } from "@/components/sections/Education";
 import { Experience } from "@/components/sections/Experience";
+import { FeaturedApps } from "@/components/sections/FeaturedApps";
 import { Hero } from "@/components/sections/Hero";
 import { Projects } from "@/components/sections/Projects";
 import { Skills } from "@/components/sections/Skills";
@@ -56,6 +57,7 @@ export default function Home() {
         <About />
         <CareerFocus />
         <Skills />
+        <FeaturedApps />
         <Projects projects={getPortfolioProjects()} />
         <Education />
         <Certificates />

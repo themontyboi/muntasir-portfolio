@@ -1,0 +1,48 @@
+import type { Project } from "@/types/portfolio";
+
+export const recentGameProjects: Project[] = [
+  {
+    title: "Fuze Frenzy",
+    slug: "fuze-frenzy",
+    category: "Roblox Co-op Game Prototype",
+    description: "A timed co-op obstacle course where two players pass a ticking core while navigating separate lanes and coordinating machinery.",
+    longDescription: "Fuze Frenzy ties its platforming to timed throws and catches. The Ballast House review builds pair the core relay with coordinated machinery, marked receiving positions and environmental obstacles. The Harbour Works update adds an industrial setting and clearer dispatch feedback. A separate spring-bumper variant tests physical knockback without resetting the fuse or changing who holds the core.",
+    technologies: ["Roblox Studio", "Luau", "Co-op Gameplay", "Touch Controls"],
+    status: "In development / Local Studio prototype",
+    image: "/projects/fuze-frenzy/harbour-dispatch.jpg",
+    previewAlt: "Fuze Frenzy Harbour Works dispatch station with both contestants on separate platforms",
+    imageFallback: "Harbour Works playtest",
+    githubUrl: null,
+    liveUrl: null,
+    featured: true,
+    comingSoon: false,
+    developmentNote: "Playtest evidence comes from local Studio review builds. Physical-phone performance and the Lift 6B stall case remain open.",
+    detailsGallery: [
+      { src: "/projects/fuze-frenzy/harbour-dispatch.jpg", title: "Harbour Works dispatch", alt: "A player waits at a latched dispatch console while Relay occupies the opposite lane", caption: "Harbour Works joins the dispatch control, receiving positions and fuse readout in one gameplay view." },
+      { src: "/projects/fuze-frenzy/harbour-sweeper.jpg", title: "Sweeper machinery", alt: "Fuze Frenzy Harbour Works sweeper machinery and marked obstacle lanes", caption: "The Harbour Works pass gives the moving hazards and safe lanes more distinct silhouettes." },
+      { src: "/projects/fuze-frenzy/spring-bumper.jpg", title: "Spring bumper playtest", alt: "A contestant recoils next to a purple spring bumper in Signal Yard", caption: "A separate review build tests collision-triggered rebound and preservation of the active fuse." },
+    ],
+  },
+  {
+    title: "Survive Mamagaga",
+    slug: "survive-mamagaga",
+    category: "Unity Boss Combat Prototype",
+    description: "A boss-combat prototype exploring readable attack cues, character abilities and overlapping effects in a shared combat lab.",
+    longDescription: "The P4.6.2 Stage 1 pass improved projectile release and impact feedback, made Echo Army ownership easier to see and gave World Slow a compact indicator beside the boss. The existing Ability Hub let the same gameplay scenarios be compared before and after changes using matched game-camera captures.",
+    technologies: ["Unity 6", "C#", "Photon Fusion", "Combat VFX", "Gameplay Testing"],
+    status: "In development / Stage 1 combat prototype",
+    image: "/projects/survive-mamagaga/world-slow.png",
+    previewAlt: "Mamagaga faces the player with the orange World Slow cue visible at its shoulder",
+    imageFallback: "Stage 1 combat lab",
+    githubUrl: null,
+    liveUrl: null,
+    featured: true,
+    comingSoon: false,
+    developmentNote: "The Stage 1 handoff records local verification of all 16 abilities and four fresh Fusion host runs. Independent four-client rendering and human playtest feedback remain open.",
+    detailsGallery: [
+      { src: "/projects/survive-mamagaga/world-slow.png", title: "World Slow", alt: "The boss displays an orange shoulder indicator while facing the player in the combat lab", caption: "World Slow uses a shoulder-level cue so the floor remains available for attack telegraphs." },
+      { src: "/projects/survive-mamagaga/projectile-comparison.jpg", title: "Projectile readability", alt: "Before-and-after gameplay frames comparing Larry's projectile release, travel and impact", caption: "Matched lab frames compare the clearer projectile and hit feedback with the earlier build." },
+      { src: "/projects/survive-mamagaga/echo-comparison.jpg", title: "Echo Army ownership", alt: "Before-and-after gameplay frames showing different selected Echo body indicators", caption: "The revised overhead marker identifies the currently controlled Echo during a body change." },
+    ],
+  },
+];

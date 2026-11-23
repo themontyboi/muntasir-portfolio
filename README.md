@@ -10,6 +10,8 @@ A Next.js portfolio for a Melbourne-based Bachelor of Cybersecurity student buil
 - Desk AI Tutor Lab Alpha as the first flagship project, with a dedicated case study at `/projects/desk-ai-tutor`.
 - Project screenshot carousels, keyboard controls and enlarged image views.
 - Academic security and forensics evidence galleries with accurate contribution and scope notes.
+- A 26-app showcase at `/apps`, with five featured cases, a searchable gallery, individual workflow recordings and a playable Pigment Press browser demo.
+- Fuze Frenzy and Survive Mamagaga screenshot galleries from their local development builds.
 - Abyss Bond animated GIF preview and playable Unity Web build. The game iframe is mounted only after Play Prototype and Load Game; desktop keyboard and mouse are recommended.
 
 ## Stack
@@ -42,10 +44,14 @@ Check desktop, tablet, 390px and 320px layouts, keyboard navigation, modal focus
 
 - `src/data/portfolio.ts`: identity, production URL, career interests, skills, projects, education, experience, resume highlights and course certificates.
 - `src/data/desk-ai-tutor.ts`: case-study capabilities, architecture branches, engineering challenges, reported validation, limitations and planned work.
+- `src/data/app-showcase.ts`: app catalogue, featured order, public media paths and workflow copy.
+- `src/data/game-projects.ts`: Fuze Frenzy and Survive Mamagaga project entries and screenshot captions.
 - `src/lib/project-gallery.ts`: discovers actual screenshots from `public/projects/desk-ai-tutor`, sorts filenames and supplies captions/alt text. Add descriptions for new screenshots here and rebuild.
 - `src/components/projects/ProjectGallery.tsx`: shared carousel and accessible enlarged image experience.
 - `public/projects`: project previews and screenshots.
 - `public/projects/evidence`: academic evidence images.
+- `public/app-showcase`: original app workspace and workflow captures from the Agency Six and Prototype Lab release galleries, encoded as WebP stills and silent MP4s.
+- `public/apps/20-pigment-press`: the self-contained Prototype Lab export and bundled dependency notices. Refresh the folder from the original Vite build, keeping its asset base path `/apps/20-pigment-press/`.
 - `public/unity/abyss-bond`: the playable Unity Web export.
 - `public/certificates`: verified course-certificate assets.
 
@@ -62,7 +68,7 @@ Production URL: https://muntasir-portfolio-eight.vercel.app
 The repository is connected to Vercel. An approved push to the configured production branch triggers its Git deployment workflow.
 
 1. Review Git status, branch, remote, changes and validation results.
-2. Stage only intended source, documentation and public assets. Keep environment files, local logs, dependency folders and generated builds out of version control.
+2. Stage only intended source, documentation and public assets. Keep environment files, local logs, dependency folders and the portfolio's generated build output out of version control.
 3. Obtain release approval, create a descriptive commit and push without force-pushing or rewriting existing history.
 4. In Vercel, open the project and inspect the deployment associated with that commit. Confirm READY status and check the production pages before reporting a successful deployment.
 
